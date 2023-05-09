@@ -4,8 +4,14 @@ import { join } from 'path';
 export const microserviceOptions: ClientOptions = {
   transport: Transport.GRPC,
   options: {
-    package: 'app',
-    protoPath: join(__dirname, './app.proto'),
-    url: 'localhost:3005'
+    package: [
+      'app',
+      'hero',
+    ],
+    protoPath: [
+      join(__dirname, './app.proto'),
+      join(__dirname, './hero/hero.proto')
+    ],
+    // url: 'localhost:3005'
   },
 }
